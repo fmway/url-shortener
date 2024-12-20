@@ -1,0 +1,15 @@
+{
+  "$schema": "https://raw.githubusercontent.com/denoland/deno/refs/tags/v2.1.4/cli/schemas/config-file.v1.json",
+  "name": "@fmway/url-shortener",
+  "version": "0.0.0",
+  "imports": {
+    "hono": "jsr:@hono/hono@^4.6.14"
+  },
+  "tasks": {
+    "start": "deno run --watch --allow-net --allow-read server.ts"
+  },
+  "unstable": [
+    "kv"
+  ],
+  "exports":"./mod.ts"
+}

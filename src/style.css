@@ -1,0 +1,218 @@
+/* css reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+body > div > div > div > span {
+  display: none;
+}
+
+input[disabled] {
+  background-color: rgb(203 213 225);
+}
+
+body {
+  font-family: 'Poppins', 'sans-serif';
+  background-color: rgb(221 214 254);
+}
+
+.container1 {
+  padding: 1.25rem;
+  justify-content: center;
+  max-width: 56rem;
+  min-height: min-content;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container2 {
+  box-shadow: 0 0 #0000, 0 0 #0000, 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); 
+  color: black;
+  padding: 1.5rem;
+  background-color: #fff;
+  border-radius: 0.75rem;
+  max-width: 72rem;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  text-align: center;
+  padding-top: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.container-input {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  margin-bottom: 1.25rem;
+}
+
+#to,
+#from {
+  font: inherit;
+  padding: 0.65rem;
+  border: 1px solid rgb(196 181 253);
+  border-radius: 0.75rem;
+  height: 1.5rem;
+  grid-column: span 12 / span 12;
+}
+
+button {
+  font: inherit;
+  color: #fff;
+  font-weight: 700;
+  background-color: rgb(124 58 237);
+  border: none;
+  border-radius: 0.5rem;
+  height: 2.5rem;
+  grid-column-start: 8;
+  grid-column-end: 13;
+  cursor: pointer;
+}
+
+
+.switch {
+  grid-column-end: 7;
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+@media (min-width: 640px) {
+  body > div {
+    margin-top: 6rem;
+  }
+  
+  
+  body > div > div > div > span {
+    display: block;
+  }
+
+  body > div > div > h1 {
+    font-size: 2.25rem !important;
+  }
+
+  body > div > div > div > input,
+  body > div > div > div > span {
+    grid-column: span 6 / span 6 !important;
+  }
+
+  body > div > div > div > button {
+    grid-column-start: 11 !important;
+  }
+
+  .switch {
+    grid-column-end: 11;
+  }
+
+  body > div > div > div > button:hover {
+    background-color: rgb(109 40 217) !important;
+  }
+
+  body > div > div > div > button:active {
+    background-color: rgb(196 181 253) !important;
+    color: rgb(51 65 85) !important;
+  }
+}
