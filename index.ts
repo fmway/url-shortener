@@ -1,8 +1,9 @@
 import { Hono } from 'hono';
 import { HTTPException } from "hono/http-exception";
-import { DB, type Data } from "./db.ts";
+import { DB } from "./db.ts";
+import type { Data } from "./db.ts";
 
-const app = new Hono();
+const app: Hono = new Hono();
 
 app
   .get('/', (c) => {
