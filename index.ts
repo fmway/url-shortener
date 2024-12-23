@@ -2,10 +2,12 @@ import { Hono } from 'hono';
 import { HTTPException } from "hono/http-exception";
 import { DB } from "./db.ts";
 import type { Data } from "./db.ts";
+import { appendTrailingSlash } from 'hono/trailing-slash';
 
 const app: Hono = new Hono();
 
 app
+  .use(appendTrailingSlash())
   .get('/', (c) => {
     return c.body(Deno.readFileSync(import.meta.dirname + "/src/index.html"))
   })
@@ -24,17 +26,6 @@ app
     }
     throw new HTTPException(400, { res: c.json({ message: '🥲' }), message: '🥲' })
   })
-  .get('/:id', async (c) => {
-    const contentType = c.req.header('Content-Type') ?? 'text/html';
-    const id = c.req.param("id");
-    const res = await new DB().getLink(id);
-    if (res) {
-      if (contentType == "application/json")
-        return c.json(res ?? {});
-      return c.redirect(res.to);
-    }
-    throw new HTTPException(400, { res: c.html(Deno.readTextFileSync(import.meta.dirname + "/src/error.html")), message: '🥲' })
-  })
   .get('/:id/', async (c) => {
     const contentType = c.req.header('Content-Type') ?? 'text/html';
     const id = c.req.param("id");
@@ -46,11 +37,11 @@ app
     }
     throw new HTTPException(400, { res: c.html(Deno.readTextFileSync(import.meta.dirname + "/src/error.html")), message: '🥲' })
   })
-  .use("*", async (c, next) => {
-    console.log(c.req.path);
-    console.log(c.req.url);
-    await next();
-  })
+  //.use("*", async (c, next) => {
+  //  console.log(c.req.path);
+  //  console.log(c.req.url);
+  //  await next();
+  //})
 
 function isValidURL(url: string): boolean {
   try {
