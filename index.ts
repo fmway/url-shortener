@@ -24,7 +24,7 @@ app
           return c.json({ ok: true, data: res.result });
       }
     }
-    throw new HTTPException(400, { res: c.json({ message: '🥲' }), message: '🥲' })
+    throw new HTTPException(400, { res: c.json({ message: '🥲' }), })
   })
   .get('/:id/', async (c) => {
     const contentType = c.req.header('Content-Type') ?? 'text/html';
