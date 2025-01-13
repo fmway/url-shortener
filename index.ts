@@ -2,12 +2,10 @@ import { Hono } from 'hono';
 import { HTTPException } from "hono/http-exception";
 import { DB } from "./db.ts";
 import type { Data } from "./db.ts";
-import { appendTrailingSlash } from 'hono/trailing-slash';
 
 const app: Hono = new Hono();
 
 app
-  .use(appendTrailingSlash())
   .get('/', (c) => {
     const contentType = c.req.header('Content-Type') ?? 'text/html';
     if (contentType === "application/json" && c.req.query("random") !== undefined)
@@ -60,11 +58,6 @@ app
     }
     throw new HTTPException(400, { res: c.html(Deno.readTextFileSync(import.meta.dirname + "/src/error.html")), message: '🥲' })
   })
-  //.use("*", async (c, next) => {
-  //  console.log(c.req.path);
-  //  console.log(c.req.url);
-  //  await next();
-  //})
 
 function isValidURL(url: string): boolean {
   try {
