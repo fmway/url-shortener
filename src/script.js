@@ -68,8 +68,8 @@ const genInputString = () => {
   inputValueDiv.classList.remove("flex", "mb-2");
   const input = document.createElement("input");
   input.classList.add(
-    "sm:p-2",
     "p-1",
+    "sm:p-2",
     "mb-2",
     "border",
     "focus:outline-violet-700",
@@ -78,7 +78,7 @@ const genInputString = () => {
     "border-violet-300",
     "w-full",
     "h-7",
-    "h-10",
+    "sm:h-10",
     "rounded-lg",
   );
   input.id = "dest";
