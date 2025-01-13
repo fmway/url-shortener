@@ -2,7 +2,8 @@
   "version": "4",
   "specifiers": {
     "jsr:@hono/hono@^4.6.14": "4.6.14",
-    "npm:tailwindcss@*": "3.4.16_postcss@8.4.49"
+    "npm:tailwindcss@*": "3.4.16_postcss@8.4.49",
+    "npm:tailwindcss@^3.4.17": "3.4.17_postcss@8.4.49"
   },
   "jsr": {
     "@hono/hono@4.6.14": {
@@ -514,6 +515,33 @@
         "sucrase"
       ]
     },
+    "tailwindcss@3.4.17_postcss@8.4.49": {
+      "integrity": "sha512-w33E2aCvSDP0tW9RZuNXadXlkHXqFzSkQew/aIa2i/Sj8fThxwovwlXHSPXTbAHwEIhBFXAedUhP2tueAKP8Og==",
+      "dependencies": [
+        "@alloc/quick-lru",
+        "arg",
+        "chokidar",
+        "didyoumean",
+        "dlv",
+        "fast-glob",
+        "glob-parent@6.0.2",
+        "is-glob",
+        "jiti",
+        "lilconfig",
+        "micromatch",
+        "normalize-path",
+        "object-hash",
+        "picocolors",
+        "postcss",
+        "postcss-import",
+        "postcss-js",
+        "postcss-load-config",
+        "postcss-nested",
+        "postcss-selector-parser",
+        "resolve",
+        "sucrase"
+      ]
+    },
     "thenify-all@1.6.0": {
       "integrity": "sha512-RNxQH/qI8/t3thXJDwcstUO4zeqo64+Uy/+sNVRBx4Xn2OX+OZ9oP+iJnNFqplFra2ZUVeKCSa2oVWi3T4uVmA==",
       "dependencies": [
@@ -566,7 +594,8 @@
   },
   "workspace": {
     "dependencies": [
-      "jsr:@hono/hono@^4.6.14"
+      "jsr:@hono/hono@^4.6.14",
+      "npm:tailwindcss@^3.4.17"
     ]
   }
 }

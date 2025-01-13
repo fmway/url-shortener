@@ -8,24 +8,45 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
     <link href="./style.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </head>
-  <body>
-    <div class="container1">
-      <div class="container2">
-        <h1 class="title">Url Shortener</h1>
-          <div class="container-input">
-            <input id="from" class="input" placeholder="custom..." disabled type="text" name="from" value="" />
-            <input id="to" class="input" placeholder="to..." type="text" name="to" value="" />
-            <div class="button">
-              <div class="container-switch">
-                <label class="switch">
-                  <input type="checkbox" />
-                  <span class="slider round"></span>
-                </label>
-              </div>
-              <button type="submit">Create</button>
-            </div>
+  <body class="font-sans bg-violet-200">
+    <div class="max-w-4xl min-h-min mx-auto sm:mt-24 flex justify-center px-5 py-5">
+      <div class="w-full max-w-6xl mx-auto rounded-xl bg-white shadow-lg p-5 text-black">
+        <h1 class="font-bold text-4xl text-center pt-5">Url Shortener</h1>
+        <hr class="mb-4 mt-1" />
+        <div class="grid grid-cols-5 gap-1 mb-5">
+          <div class="col-span-5">
+            <input type="checkbox" id="custom-short-url" name="custom-short-url" value="">
+            <label for="custom-short-url">Custom Url</label>
           </div>
+          <div class="col-span-5 flex items-center relative">
+            <input required id="id" disabled class="grow p-2 mr-0 sm:mr-3 border focus:outline-violet-700 disabled:bg-slate-200 disabled:text-slate-500 focus:shadow-outline border-violet-300 h-10 rounded-lg" type="text" name="id" value="" placeholder="shorten url..." />
+            <button id="button-refresh" class="shrink text-3xl absolute -top-3/4 right-0 sm:static text-slate-900 hover:text-slate-600 active:text-slate-400">
+              <i class='bx bx-refresh m-auto' ></i>
+            </button>
+          </div>
+          <span id="error-message" class="col-span-5 text-red-600 ml-2 text-xs hide">already taken</span>
+          <div class="col-span-5">
+            <input type="radio" id="string" name="value_type" value="string">
+            <label for="string">String</label>
+            <input type="radio" id="list" name="value_type" value="list">
+            <label for="list">List</label> 
+            <input type="radio" id="map" name="value_type" value="map">
+            <label for="map">Map</label>
+          </div>
+
+          <div class="col-span-5" id="input-value">
+            
+          </div>
+
+          <div class="col-span-5" id="list-values"></div>
+
+          <button id="submit" class="bg-violet-600 h-10 col-start-4 sm:col-start-5 col-end-6 hover:bg-violet-700 active:bg-violet-300 active:text-slate-700 text-white font-bold rounded-lg">Submit</button>
+        </div>
+        </div>
       </div>
     </div>
     <script src="script.js"></script>

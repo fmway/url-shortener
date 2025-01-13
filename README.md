@@ -7,9 +7,10 @@ deno task start
 ```
 
 ## Feature:
-- [ ] Friendly UI/UX
+- [x] Friendly UI/UX (maybe)
 - [ ] Documentation
 - [x] Deno fresh compability
 - [ ] Cross Runtime
-- [ ] Support array & object
+- [x] Support List & Map
 - [ ] Custom DBMS
+- [ ] Full Customizable with token

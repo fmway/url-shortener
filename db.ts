@@ -6,8 +6,12 @@ export class DB {
     return this;
   }
 
-  async createLink(to: string, from?: string): Promise<({success:false,message:string}|{success:true,result:Data})> {
-    const id = (from && from != "") ? from : makeId(7);
+  randomId(): string {
+    return makeId(7);
+  }
+
+  async createLink(to: Data["to"], from?: Data["from"]): Promise<({success:false,message:string}|{success:true,result:Data})> {
+    const id = (from && from != "") ? from : this.randomId();
     if (await this.isExist(id)) 
       return { success: false, message: "id is exist" };
     await (await this.kv).set(["short", id], { from: id, to, });
@@ -30,7 +34,7 @@ export class DB {
 
 export interface Data {
   from: string,
-  to: string,
+  to: string | string[] | Record<string, string>,
 }
 
 export function makeId(length: number) {
