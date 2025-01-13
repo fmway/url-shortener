@@ -604,6 +604,10 @@ video {
   right: 0px;
 }
 
+.-top-full {
+  top: -100%;
+}
+
 .col-span-2 {
   grid-column: span 2 / span 2;
 }
@@ -657,6 +661,14 @@ video {
   margin-top: 0.25rem;
 }
 
+.mr-1 {
+  margin-right: 0.25rem;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
 .flex {
   display: flex;
 }
@@ -671,6 +683,10 @@ video {
 
 .h-10 {
   height: 2.5rem;
+}
+
+.h-7 {
+  height: 1.75rem;
 }
 
 .min-h-min {
@@ -716,6 +732,10 @@ video {
 
 .flex-row {
   flex-direction: row;
+}
+
+.flex-col {
+  flex-direction: column;
 }
 
 .items-center {
@@ -841,6 +861,28 @@ video {
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.text-\[0\.5rem\] {
+  font-size: 0.5rem;
+}
+
+.text-\[0\.6rem\] {
+  font-size: 0.6rem;
+}
+
+.text-\[0\.65rem\] {
+  font-size: 0.65rem;
 }
 
 .font-bold {
@@ -973,8 +1015,36 @@ video {
     display: inline;
   }
 
+  .sm\:h-10 {
+    height: 2.5rem;
+  }
+
   .sm\:gap-1 {
     gap: 0.25rem;
+  }
+
+  .sm\:p-2 {
+    padding: 0.5rem;
+  }
+
+  .sm\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+
+  .sm\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
+  .sm\:text-xs {
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+
+  .sm\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
   }
 }
 

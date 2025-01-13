@@ -68,7 +68,8 @@ const genInputString = () => {
   inputValueDiv.classList.remove("flex", "mb-2");
   const input = document.createElement("input");
   input.classList.add(
-    "p-2",
+    "sm:p-2",
+    "p-1",
     "mb-2",
     "border",
     "focus:outline-violet-700",
@@ -76,6 +77,7 @@ const genInputString = () => {
     "focus:shadow-outline",
     "border-violet-300",
     "w-full",
+    "h-7",
     "h-10",
     "rounded-lg",
   );
@@ -96,16 +98,19 @@ const genInputList = () => {
   const input = document.createElement("input");
   const btn = document.createElement("button");
   input.classList.add(
-    "p-2",
+    "sm:p-2",
+    "p-1",
     "grow",
-    "mr-3",
+    "mr-0",
+    "sm:mr-3",
     "border",
     "focus:outline-violet-700",
     "disabled:bg-slate-200",
     "focus:shadow-outline",
     "border-violet-300",
     "w-full",
-    "h-10",
+    "h-7",
+    "sm:h-10",
     "rounded-lg",
   );
 
@@ -121,7 +126,8 @@ const genInputList = () => {
   btn.id = "add";
   btn.classList.add(
     "shrink",
-    "text-3xl",
+    "text-xl",
+    "sm:text-3xl",
     "text-slate-900",
     "hover:text-violet-600",
     "active:text-slate-200",
@@ -139,23 +145,24 @@ const genInputMap = () => {
   const input1 = document.createElement("input");
   const input2 = document.createElement("input");
 
-  div.classList.add("grow", "grid", "gap-2", "sm:gap-1", "grid-cols-4", "mr-3");
+  div.classList.add("grow", "grid", "gap-2", "sm:gap-1", "grid-cols-4", "mr-0", "sm:mr-3");
   btn.id = "add";
   btn.classList.add(
     "shrink",
-    "text-3xl",
+    "text-xl",
+    "sm:text-3xl",
     "text-slate-900",
     "hover:text-violet-600",
     "active:text-slate-200",
   );
 
-  input1.classList.add("col-span-2", "sm:col-span-1", "p-2", "border", "focus:outline-violet-700", "disabled:bg-slate-200", "focus:shadow-outline", "border-violet-300", "h-10", "rounded-lg");
+  input1.classList.add("col-span-2", "sm:col-span-1", "p-1", "sm:p-2", "border", "focus:outline-violet-700", "disabled:bg-slate-200", "focus:shadow-outline", "border-violet-300", "h-7", "sm:h-10", "rounded-lg");
   input1.setAttribute("type", "text");
   input1.setAttribute("name", "id");
   input1.setAttribute("maxlength", "7");
   input1.setAttribute("placeholder", "key...");
 
-  input2.classList.add("col-span-2", "sm:col-span-3", "p-2", "border", "focus:outline-violet-700", "disabled:bg-slate-200", "focus:shadow-outline", "border-violet-300", "h-10", "rounded-lg");
+  input2.classList.add("col-span-2", "sm:col-span-3", "p-1", "sm:p-2", "border", "focus:outline-violet-700", "disabled:bg-slate-200", "focus:shadow-outline", "border-violet-300", "h-7", "sm:h-10", "rounded-lg");
   input2.setAttribute("type", "text");
   input2.setAttribute("name", "dest");
   input2.setAttribute("placeholder", "destination url...");
@@ -209,7 +216,7 @@ const addToList = (value, elems) => {
   // El is the super container
   const el = document.createElement("div");
   listValues.classList.add("rounded-lg", "border", "border-violet-300");
-  el.classList.add("text-xl", "border", "border-violet-200", "p-1", "flex", "flex-row", "justify-between", "items-center");
+  el.classList.add("text-sm", "sm:text-xl", "border", "border-violet-200", "p-1", "flex", "flex-row", "justify-between", "items-center");
   el.id = id;
   
   // Value.

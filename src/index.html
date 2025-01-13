@@ -15,27 +15,27 @@
   <body class="font-sans bg-violet-200">
     <div class="max-w-4xl min-h-min mx-auto sm:mt-24 flex justify-center px-5 py-5">
       <div class="w-full max-w-6xl mx-auto rounded-xl bg-white shadow-lg p-5 text-black">
-        <h1 class="font-bold text-4xl text-center pt-5">Url Shortener</h1>
+        <h1 class="font-bold text-2xl sm:text-4xl text-center pt-5">Url Shortener</h1>
         <hr class="mb-4 mt-1" />
-        <div class="grid grid-cols-5 gap-1 mb-5">
+        <div class="grid grid-cols-5 text-sm sm:text-md gap-1 mb-5">
           <div class="col-span-5">
             <input type="checkbox" id="custom-short-url" name="custom-short-url" value="">
             <label for="custom-short-url">Custom Url</label>
           </div>
           <div class="col-span-5 flex items-center relative">
-            <input required id="id" disabled class="grow p-2 border focus:outline-violet-700 disabled:bg-slate-200 disabled:text-slate-500 focus:shadow-outline border-violet-300 w-full h-10 rounded-lg" type="text" name="id" value="" placeholder="shorten url..." />
-            <button id="button-refresh" class="shrink text-3xl absolute -top-3/4 right-0 sm:static text-slate-900 hover:text-slate-600 active:text-slate-400">
+            <input required id="id" disabled class="grow p-1 sm:p-2 border focus:outline-violet-700 disabled:bg-slate-200 disabled:text-slate-500 focus:shadow-outline border-violet-300 w-full h-7 sm:h-10 rounded-lg" type="text" name="id" value="" placeholder="shorten url..." />
+            <button id="button-refresh" class="shrink text-xl sm:text-3xl absolute -top-full right-0 sm:static text-slate-900 hover:text-slate-600 active:text-slate-400">
               <i class='bx bx-refresh m-auto' ></i>
             </button>
           </div>
           <span id="error-message" class="col-span-5 text-red-600 ml-2 text-xs hide">already taken</span>
           <div class="col-span-5">
             <input type="radio" id="string" name="value_type" value="string">
-            <label for="string">String</label>
+            <label for="string" class="m-auto">String</label>
             <input type="radio" id="list" name="value_type" value="list">
-            <label for="list">List</label> 
+            <label for="list" class="m-auto">List</label> 
             <input type="radio" id="map" name="value_type" value="map">
-            <label for="map">Map</label>
+            <label for="map" class="m-auto">Map</label>
           </div>
 
           <div class="col-span-5" id="input-value">
