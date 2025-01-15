@@ -2,7 +2,7 @@ export class DB {
   kv: Promise<Deno.Kv>;
 
   constructor() {
-    this.kv = Deno.openKv();
+    this.kv = Deno.openKv(Deno.env.get("DENOKV_URL"));
     return this;
   }
 
